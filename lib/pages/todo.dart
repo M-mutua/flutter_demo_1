@@ -27,8 +27,10 @@ class _toDoAppState extends State<toDoApp> {
   void saveNewToDo(){
     setState(() {
       toDoList.add([controller.text, false]);
-      Navigator.pop(context);
+      controller.clear();
+      //Navigator.pop(context);
     });
+    Navigator.of(context).pop();
   }
   void createNewToDo(){
     showDialog(
@@ -42,14 +44,20 @@ class _toDoAppState extends State<toDoApp> {
       }
       );  
   }
+  void deleteTask(int index){
+    setState(() {
+      toDoList.removeAt(index);
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.purple[100],
       appBar: AppBar(
          backgroundColor: Colors.purple[600],
-         title: Text("TO DO"),
+         title: Text("To Do List"),
          elevation: 0,
+         centerTitle: true,
       ), 
       floatingActionButton: FloatingActionButton(
         onPressed:() {
@@ -64,6 +72,7 @@ class _toDoAppState extends State<toDoApp> {
             taskName: toDoList[index][0], 
             taskCompleted: toDoList[index][1], 
             onChanged:(value) => checkBoxChange(value, index),
+            deleteFunction:(p0) => deleteTask(index),
           ); 
         },
       )

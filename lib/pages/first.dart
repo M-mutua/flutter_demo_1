@@ -26,7 +26,7 @@ class First extends StatelessWidget {
           label: "Settings",
          ),
          
-        ],
+        ]
         ),
       drawer: Drawer(
         backgroundColor: Colors.purple[100],
