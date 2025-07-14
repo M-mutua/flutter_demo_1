@@ -10,7 +10,7 @@ class _ProfileState extends State<Profile> {
   String userGreet = "";
  void greetUser(){
   setState(() {
-  userGreet = "Hello," + textControler.text;
+  userGreet = "Hello,${textControler.text}";
   });
  }
   //Text Editing Controler to fget what the user has typed in

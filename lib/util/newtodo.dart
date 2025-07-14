@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart ';
 import 'package:flutter_application_1/util/mybutton.dart';
  class DialogBox extends StatefulWidget {
+     // ignore: prefer_typing_uninitialized_variables
      final controller;
      final VoidCallback onSave;
      final VoidCallback onCancel;
-    DialogBox({
+    const DialogBox({
       super.key,
       required this.controller,
       required this.onCancel,

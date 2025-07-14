@@ -7,7 +7,13 @@ class Todotile extends StatelessWidget {
   Function(bool?)? onChanged;
   void Function(BuildContext)? deleteFunction;
 
-   Todotile({super.key, required this.taskName, required this.taskCompleted, required this.onChanged, required this.deleteFunction});
+   Todotile({
+    super.key, 
+    required this.taskName, 
+    required this.taskCompleted, 
+    required this.onChanged, 
+    required this.deleteFunction
+    });
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +36,7 @@ class Todotile extends StatelessWidget {
           // ignore: sort_child_properties_last
           child  : Row(
             children: [
-              Checkbox(value: taskCompleted, onChanged: onChanged),
+              Checkbox(value: taskCompleted, onChanged: onChanged, activeColor: Colors.green,),
               Text(taskName,
               style: TextStyle(
                 decoration: 
@@ -41,7 +47,7 @@ class Todotile extends StatelessWidget {
             ],
           ),
           decoration: BoxDecoration(
-            color: Colors.purple,
+            color: Colors.purple.shade300,
             borderRadius: BorderRadius.circular(12)
         ),
           

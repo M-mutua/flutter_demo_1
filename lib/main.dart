@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/first.dart';
 import 'package:flutter_application_1/pages/counter.dart';
+import 'package:flutter_application_1/pages/intro.dart';
+import 'package:flutter_application_1/pages/shop.dart';
 import 'package:flutter_application_1/pages/textcontrol.dart';
 import 'package:flutter_application_1/pages/todo.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+void main() async {
+  // this code is for initializing the hive
+  await Hive.initFlutter();
+
+  // opening the storage(hive)
+  // ignore: unused_local_variable
+  var store = await Hive.openBox('dataStore');
+
   runApp (MyApp());
    }
 class MyApp extends StatelessWidget {
@@ -23,6 +33,8 @@ class MyApp extends StatelessWidget {
           '/home' : (context) => Home(),
           '/profile' : (context) => Profile(),
           '/todoapp' : (context) => toDoApp(),
+          '/shop' : (context) => Shop(),
+          '/intro' : (context) => IntroPage(),
         },
       /* Scaffold(
         backgroundColor: Colors.cyan,

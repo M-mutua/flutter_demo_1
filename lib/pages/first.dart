@@ -68,6 +68,14 @@ class First extends StatelessWidget {
                 Navigator.pop(context);
                 Navigator.pushNamed(context, '/todoapp');
               },
+            ),
+            ListTile(
+              leading: Icon(Icons.shopify_sharp),
+              title: Text("S H O P"),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/intro');
+              },
             )
           ],
         ),
